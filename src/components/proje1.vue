@@ -30,22 +30,27 @@
     <div>
       <table>
         <tr v-for="(value, name) in lists" :key="value" :id="name">
-          <td>{{name}}:{{ value }}</td>
+          <td>{{ name }}:{{ value }}</td>
         </tr>
       </table>
     </div>
-    
-        <input type="text" placeholder="Yazın" v-model="newTodoText">
-        <button @click="addNewTodo">Ekle</button>
-    
-    <ul v-for="(to,index)  in Todo" :key="to.id" :title="to.name">
-        <li style="list-style:none">{{to.id}}:{{to.name}} <button @click="Todo.splice(index,1)">Kaldır</button></li>
+
+    <input type="text" placeholder="Yazın" v-model="newTodoText" />
+    <button @click="addNewTodo">Ekle</button>
+
+    <ul v-for="(to, index) in Todo" :key="to.id" :title="to.name">
+      <li style="list-style: none">
+        {{ to.id }}:{{ to.name }}
+        <button @click="Todo.splice(index, 1)">Kaldır</button>
+      </li>
     </ul>
+   
   </div>
 </template>
 
 <script>
 export default {
+  
   data() {
     return {
       change: true,
@@ -59,13 +64,15 @@ export default {
         name: "Fatma",
         surname: "Atasoy",
       },
-      newTodoText:"",
-      
-      Todo:[{
-          id:1,
-          name:"Ev temizlencek"
-      }],
-      newTodoId:2
+      newTodoText: "",
+
+      Todo: [
+        {
+          id: 1,
+          name: "Ev temizlencek",
+        },
+      ],
+      newTodoId: 2,
     };
   },
   methods: {
@@ -75,13 +82,13 @@ export default {
     eventHandler($event) {
       console.log($event);
     },
-    addNewTodo(){
-        this.Todo.push({
-            id:this.newTodoId++,
-            name:this.newTodoText
-        })
-        this.newTodoText=""
-    }
+    addNewTodo() {
+      this.Todo.push({
+        id: this.newTodoId++,
+        name: this.newTodoText,
+      });
+      this.newTodoText = "";
+    },
   },
 };
 </script>
