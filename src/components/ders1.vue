@@ -11,8 +11,8 @@
       <p v-bind:style="{ background }">
         Burada arkaplan rengini bind ile değiştiricez
       </p>
-      <p :class="{ a }">Class ekletelim</p>
-      <!--Bind elementin attrubitune müdahale ediyor-->
+      <p :class="{ 'a':change }">Class ekletelim</p>
+      <!--Bind elementin attrubituna buton yardımıyla müdahale ediyor-->
     </div>
     <div>
       <input
@@ -58,7 +58,6 @@ export default {
       soru: "Sende Bir değişiklik var",
       text: "",
       checkbox: [],
-      a: {},
       lists: {
         ıd: "1",
         name: "Fatma",

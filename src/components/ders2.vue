@@ -4,7 +4,7 @@
     <div>
       <b-table striped hover :items="items"></b-table>
     </div>
-    <p>{{messages}}</p>
+    <p>Child'dan sesleniyorum:{{messages}}</p>
   </div>
 </template>
 
