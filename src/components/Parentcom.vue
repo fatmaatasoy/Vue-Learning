@@ -28,17 +28,25 @@
         </div>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <b-button  class="mt-5" @click="open3=!open3">3.Ders için basın</b-button>
+        <Ders3 v-if="open3"/>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 import Proje1 from "./ders1";
 import Proje2 from "./ders2";
+import Ders3 from  "./ders3"
 export default {
   name: "Parent",
   components: {
     Proje1,
     Proje2,
+    Ders3,
   },
   data() {
     return {
@@ -57,6 +65,7 @@ export default {
       messages: "",
       open: false,
       open2: false,
+      open3:false,
     };
   },
 };
